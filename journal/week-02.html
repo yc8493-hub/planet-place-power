@@ -27,7 +27,7 @@
 <article class="entry">
   <div class="wrap wrap-narrow">
 
-    <p class="kicker">Week 01 · September 2026</p>
+    <p class="kicker">Week 02 · September 2026</p>
 
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
@@ -60,9 +60,9 @@
 
     <h2>The method</h2>
     <p>
-      What you actually did, in enough detail that someone else could repeat
-      it. Which base layer, which overlay, roughly what zoom, and where you set
-      the opacity. If you chose a threshold or a year, say why you chose it.
+      I first filtered the global station layer using GHCN-D ID starts with IT, which returned 43 stations in Italy. I then selected the station nearest to Florence, located in Pisa, and added a second filter: GHCN-D ID is ITM00016158. The two expressions were joined with AND so that only one station remained.
+
+I created two bar charts using the twelve monthly average temperature fields in °C and the twelve monthly mean precipitation fields in mm, with aggregation set to Mean. I also examined several northern Italian lowland stations and one southern station in Sicily to compare the regional north–south pattern.
     </p>
 
     <!-- ============================================================
@@ -85,29 +85,45 @@
 
      
        <figcaption>
-       Climate normals for Florence and Italy, using the 1981–2010 reference period.
+       Climate normals for Florence, using the 1981–2010 reference period.
        </figcaption>
     </figure>
 
     <h2>What I found</h2>
     <p>
-      Plain language. What does the image actually support? Use at least three
-      of the ten words — pattern, distribution, density, clustering, proximity,
-      adjacency, connectivity, relationship, change, diffusion — and use them
-      correctly.
+      Florence shows a Mediterranean climate pattern: July and August are
+  the hottest months at about 23.73°C, January is the coldest at about 6.37°C,
+  November is the wettest month, and July is the driest. Rainfall is therefore
+  concentrated more in the cooler season rather than the hottest part of the
+  year. This places Florence between the cooler northern Italian lowlands and
+  the warmer, more strongly Mediterranean south. Northern stations such as
+  Ghedi and Verona have colder winters and more evenly distributed rainfall,
+  while southern Sicily has hotter summers and a much clearer dry-summer
+  pattern. Florence is not an extreme case, but an intermediate one within
+  Italy’s broader north–south climate distribution. At a larger scale, this
+  regional relationship also fits the wider pattern of warmer low latitudes and
+  drier subtropical zones shaped in part by atmospheric circulation.
     </p>
 
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-        The honest part. What the image cannot support, what you had to assume,
-        and what would change your mind. Name the extent you chose, and say how
-        the answer would differ if you had zoomed out one step.
+        The main limitation is that the nearest station is in Pisa, so I am using
+    one station outside Florence to stand for Florence’s local climate. That
+    assumption may be affected by differences in location, elevation, and local
+    conditions. The wider map also has uneven station coverage, with much denser
+    observations in places such as Europe and North America than in central
+    Africa, deserts, oceans, and Antarctica, so blank areas should not be read as
+    evidence of uniform climate. The dataset also uses the 1981–2010 climate
+    normal rather than the current 1991–2020 WMO normal. The baseline exercise
+    showed why baseline matter: the same tropical temperature of 26.13°C gave an
+    anomaly of +0.95°C against 1991–2020 but +1.18°C against 1979–2000.
       </p>
       <p>
-        <strong>AI use:</strong> AI-assisted for [what], using [which tool].
-        I verified [how]. If you did not use AI, write "No AI tools were used
-        for this entry."
+        <strong>AI use:</strong> AI-assisted with organizing my interpretation of
+    the ArcGIS results and clarifying the tutorial requirements, using ChatGPT.
+    I verified the station values, filters, charts, and spatial patterns
+    directly in ArcGIS before using them in this entry.
       </p>
     </div>
 
@@ -119,7 +135,7 @@
 
 <footer class="site-foot">
   <div class="wrap wrap-narrow">
-    <p>Your Name · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+    <p>Cecilia Chen · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
   </div>
 </footer>
 
