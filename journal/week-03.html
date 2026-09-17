@@ -32,7 +32,7 @@
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
          "Week 1 journal entry". -->
-    <h1>Florence Between Northern and Southern Italy</h1>
+    <h1>Florence: Valley and Hills</h1>
 
     <!-- ============================================================
          The six parts. Every entry in this course has all six.
@@ -44,6 +44,7 @@
     <p>
     How do the terrain pattern and slope distribution of Florence shape water movement across different scales?  
     </p>
+       
     <h2>The data</h2>
 <p>
   I used Esri’s Terrain service and the Terrain – Slope Degrees layer. At Florence, the finest underlying elevation dataset is Italy_TINITALY_DTM10m, produced by INGV, with a 10 m cell size and survey dates from 2007–2023. Vertical accuracy (LE90) and the vertical datum are not stated in the layer metadata.
@@ -54,14 +55,24 @@
 <p>
   
 </p>
+<h2>The method</h2>
 
-    <h2>The method</h2>
     <p>
-  I added Esri’s Terrain and Terrain – Slope Degrees layers in ArcGIS Online. Slope was derived from the elevation raster using a nine-cell window: each cell was calculated from its elevation and the eight neighbouring cells. I first used a continuous Stretch rendering and narrowed the displayed slope range to 0–16°. I then used Classify with manual breaks at 1°, 2°, 5°, and 10°, producing five classes: 0–1°, 1–2°, 2–5°, 5–10°, and 10–16°. The underlying slope data did not change; only the symbology changed.
+  I added Esri’s Terrain and Terrain – Slope Degrees layers in ArcGIS Online.
+  Slope was derived from the elevation raster using a nine-cell window:
+  each cell was calculated from its elevation and the eight neighbouring cells.
+  I first used a continuous Stretch rendering and narrowed the displayed slope
+  range to 0–16°. I then used Classify with manual breaks at 1°, 2°, 5°, and 10°,
+  producing five classes: 0–1°, 1–2°, 2–5°, 5–10°, and 10–16°.
+  The underlying slope data did not change; only the symbology changed.
+</p>
 
-For soil, I tested several SoilGrids properties over central Florence, but no readable value was returned. I therefore used the World Soils 250m Soil Organic Carbon layer in ArcGIS and checked its description, cell size, licence, and information about the companion uncertainty layer.    
-
-    </p>
+<p>
+  For soil, I tested several SoilGrids properties over central Florence,
+  but no readable value was returned. I therefore used the World Soils
+  250m Soil Organic Carbon layer in ArcGIS and checked its description,
+  cell size, licence, and information about the companion uncertainty layer.
+</p>
     <!-- ============================================================
          YOUR EVIDENCE
 
@@ -85,43 +96,70 @@ For soil, I tested several SoilGrids properties over central Florence, but no re
        </figcaption>
     </figure>
 
+       <figure>
+  <img
+    src="Florence-sketch.png"
+    alt="Continuous slope rendering showing the flat Arno valley through Florence surrounded by steeper hills."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 1. Continuous Stretch rendering of Terrain – Slope Degrees
+    around Florence, derived from the 10 m Italy_TINITALY_DTM10m elevation dataset.
+    The displayed slope range is 0–16°.
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img
+    src="Florence-classify.png"
+    alt="Classified slope map showing the flat Florence and Arno valley in yellow and the steeper surrounding hills in orange and red."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 2. Classified rendering of the same 10 m slope data using
+    manual breaks at 1°, 2°, 5°, and 10°. The classification makes the
+    contrast between the flat valley and the surrounding hills more visible.
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img
+    src="Florence-soil.png"
+    alt="Soil organic carbon map around Florence showing gaps with no displayed soil value in the central urban area."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 3. World Soils 250m Soil Organic Carbon around Florence.
+    The central urban area contains NoData gaps, limiting site-specific
+    interpretation of soil organic carbon.
+  </figcaption>
+</figure>
+
+
   
 
     <h2>What I found</h2>
     <p>
-      Florence shows a Mediterranean climate pattern: July and August are
-  the hottest months at about 23.73°C, January is the coldest at about 6.37°C,
-  November is the wettest month, and July is the driest. Rainfall is therefore
-  concentrated more in the cooler season rather than the hottest part of the
-  year. This places Florence between the cooler northern Italian lowlands and
-  the warmer, more strongly Mediterranean south. Northern stations such as
-  Ghedi and Verona have colder winters and more evenly distributed rainfall,
-  while southern Sicily has hotter summers and a much clearer dry-summer
-  pattern. Florence is not an extreme case, but an intermediate one within
-  Italy’s broader north–south climate distribution. At a larger scale, this
-  regional relationship also fits the wider pattern of warmer low latitudes and
-  drier subtropical zones shaped in part by atmospheric circulation.
+      Material would generally move from the steeper hills around Florence toward the lower valley and eventually toward the river. Soil organic carbon shows a patchy distribution around central Florence, with several NoData gaps instead of continuous coverage.
     </p>
 
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-        The main limitation is that the nearest station is in Pisa, so I am using
-    one station outside Florence to stand for Florence’s local climate. That
-    assumption may be affected by differences in location, elevation, and local
-    conditions. The wider map also has uneven station coverage, with much denser
-    observations in places such as Europe and North America than in central
-    Africa, deserts, oceans, and Antarctica, so blank areas should not be read as
-    evidence of uniform climate. The dataset also uses the 1981–2010 climate
-    normal rather than the current 1991–2020 WMO normal. The baseline exercise
-    showed why baseline matter: the same tropical temperature of 26.13°C gave an
-    anomaly of +0.95°C against 1991–2020 but +1.18°C against 1979–2000.
+        The 10 m terrain cells are too large to show many street-scale features
+  that affect runoff in Florence, such as curbs, drains, and small changes
+  in road slope. The layer metadata also does not state LE90 or the vertical
+  datum, so the vertical accuracy and elevation reference are not fully
+  documented. The soil layer is predictive and also contains NoData areas,
+  so it cannot support a precise site-level soil claim.
       </p>
       <p>
-        <strong>AI use:</strong> I used ChatGPT to clarify the tutorial requirements,
-  check the structure of my HTML, and help organize the wording of this journal
-  entry. I verified the ArcGIS filters, station values, charts, and final webpage
-  directly in ArcGIS and GitHub Pages.
+        <strong>AI use:</strong> I used ChatGPT mainly to organize the overall structure of the journal, help build and edit the website, and guide me through using ArcGIS and SoilGrids. I checked the final map settings, metadata, screenshots, and interpretations directly against ArcGIS, SoilGrids, and the tutorial instructions.
       </p>
     </div>
 
