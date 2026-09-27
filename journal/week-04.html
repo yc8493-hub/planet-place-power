@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 04 · Cecilia</title>
+
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">cecilia</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 04 · September 2026</p>
+
+    <!-- EDIT THIS: a title that says what you found, not what you did.
+         "The blocks that were built after the creek was filled" beats
+         "Week 1 journal entry". -->
+    <h1>Florence: Valley and Hills</h1>
+
+    <!-- ============================================================
+         The six parts. Every entry in this course has all six.
+         Do not delete a heading — if a section is thin, that is
+         information too.
+         ============================================================ -->
+
+    <h2>The question</h2>
+    <p>
+   
+       
+    <h2>The data</h2>
+<p>
+  I used Esri’s Terrain service and the Terrain – Slope Degrees layer. At Florence, the finest underlying elevation dataset is Italy_TINITALY_DTM10m, produced by INGV, with a 10 m cell size and survey dates from 2007–2023. Vertical accuracy (LE90) and the vertical datum are not stated in the layer metadata.
+
+  For soil, I first used SoilGrids by ISRIC. However, several soil properties returned no readable value over central Florence. I therefore used Esri’s World Soils 250m Soil Organic Carbon layer, which republishes SoilGrids predictions at a 250 m cell size. The original SoilGrids data are licensed under CC BY 4.0; the Esri item page lists the Esri Master License Agreement.
+</p>
+
+<p>
+  
+</p>
+<h2>The method</h2>
+
+    <p>
+  I added Esri’s Terrain and Terrain – Slope Degrees layers in ArcGIS Online.
+  Slope was derived from the elevation raster using a nine-cell window:
+  each cell was calculated from its elevation and the eight neighbouring cells.
+  I first used a continuous Stretch rendering and narrowed the displayed slope
+  range to 0–16°. I then used Classify with manual breaks at 1°, 2°, 5°, and 10°,
+  producing five classes: 0–1°, 1–2°, 2–5°, 5–10°, and 10–16°.
+  The underlying slope data did not change; only the symbology changed.
+</p>
+
+<p>
+  For soil, I tested several SoilGrids properties over central Florence,
+  but no readable value was returned. I therefore used the World Soils
+  250m Soil Organic Carbon layer in ArcGIS and checked its description,
+  cell size, licence, and information about the companion uncertainty layer.
+</p>
+    <!-- ============================================================
+         YOUR EVIDENCE
+
+         WEEK 1: a screenshot from the Site Scanner. Upload it into this
+         journal folder (Add file → Upload files) and change the src
+         below to your filename, for example src="scanner-01.png".
+
+         FROM WEEK 2, once ArcGIS Online is live: publish your web map,
+         choose Share → Embed, delete the <img> line, remove the <!-- and
+         --> around the iframe, and paste your address in.
+         ============================================================ -->
+    <figure>
+      <iframe width="700" height="600" allow="local-network-access; geolocation" 
+        title="Tutorial 2 · Terrain · Cecilia Chen" 
+        src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=896b21cf2a4a4717b1472a55aeac2181&theme=light&legend=true&information=true&share=true&scroll=false&center=11.278621465407603,43.76734905152384&scale=144447.638572" >
+        
+        </iframe>
+         
+       <figcaption>
+       Interactive terrain map of Florence showing classified slope derived from the 10 m Italy_TINITALY_DTM10m elevation dataset.
+       </figcaption>
+    </figure>
+
+       <figure>
+  <img
+    src="Florence-sketch.png"
+    alt="Continuous slope rendering showing the flat Arno valley through Florence surrounded by steeper hills."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 1. Continuous Stretch rendering of Terrain – Slope Degrees
+    around Florence, derived from the 10 m Italy_TINITALY_DTM10m elevation dataset.
+    The displayed slope range is 0–16°.
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img
+    src="Florence-classify.png"
+    alt="Classified slope map showing the flat Florence and Arno valley in yellow and the steeper surrounding hills in orange and red."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 2. Classified rendering of the same 10 m slope data using
+    manual breaks at 1°, 2°, 5°, and 10°. The classification makes the
+    contrast between the flat valley and the surrounding hills more visible.
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img
+    src="Florence-soil.png"
+    alt="Soil organic carbon map around Florence showing gaps with no displayed soil value in the central urban area."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 3. World Soils 250m Soil Organic Carbon around Florence.
+    The central urban area contains NoData gaps, limiting site-specific
+    interpretation of soil organic carbon.
+  </figcaption>
+</figure>
+
+
+  
+
+    <h2>What I found</h2>
+    <p>
+      Before looking at the terrain data, I expected Florence to be a valley
+  with a heavily modified urban surface, and I expected water to move toward
+  lower ground through both natural slope and the city's drainage system.
+  The map broadly supports the first part of that expectation: central Florence
+  lies on relatively flat ground in the Arno valley, surrounded by much steeper hills.
+  Material would therefore generally move from the surrounding slopes toward the
+  lower valley and eventually toward the Arno River. Soil organic carbon shows
+  a patchy distribution around central Florence, with several NoData gaps instead
+  of continuous coverage.
+    </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+        The 10 m terrain cells are too large to show many street-scale features
+  that affect runoff in Florence, such as curbs, drains, and small changes
+  in road slope. The layer metadata also does not state LE90 or the vertical
+  datum, so the vertical accuracy and elevation reference are not fully
+  documented. The soil layer is predictive and also contains NoData areas,
+  so it cannot support a precise site-level soil claim.
+      </p>
+      <p>
+        <strong>AI use:</strong> I used ChatGPT mainly to organize the overall structure of the journal, help build and edit the website, and guide me through using ArcGIS and SoilGrids. I checked the final map settings, metadata, screenshots, and interpretations directly against ArcGIS, SoilGrids, and the tutorial instructions.
+      </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Cecilia Chen · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
