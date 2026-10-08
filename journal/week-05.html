@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 05 · Cecilia</title>
+
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Cecilia</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 05 · Octorber 2026</p>
+
+    <!-- EDIT THIS: a title that says what you found, not what you did.
+         "The blocks that were built after the creek was filled" beats
+         "Week 1 journal entry". -->
+    <h1>Florence: Water</h1>
+
+    <!-- ============================================================
+         The six parts. Every entry in this course has all six.
+         Do not delete a heading — if a section is thin, that is
+         information too.
+         ============================================================ -->
+
+    <h2>The question</h2>
+    <p>
+   How does water flow through Florence, and how do natural watershed boundaries relate to the city's water supply system?
+    </p>
+    <h2>The data</h2>
+<p>
+I used Global Watersheds with MERIT-Hydro (2021) and HydroSHEDS (2013) to delineate the catchment around Palazzo Vecchio in Florence (43.769° N, 11.256° E).
+
+For water stress, I used WRI's Aqueduct 4.0 Water Risk dataset through ArcGIS Online. It uses a 1979–2019 baseline, with data from April 2023, and is licensed under CC BY 4.0. Water stress represents the ratio of water withdrawals to available renewable supply at the sub-basin scale.
+</p>
+
+<h2>The method</h2>
+
+<p>
+  I used NDVI Raw to read index values and NDVI Colorized to visualize their spatial pattern. I compared three green places that I had ranked before checking the data, first at a broader Florence and peri-urban scale and then at more local urban sites. I also used the Index Mask tool with 0.5 as the threshold for “green,” then tested 0.4 and 0.6 to see whether changing the threshold could separate ecological habitat from managed green surfaces.
+</p>
+
+    
+    <figure>
+      <iframe width="700" height="600" allow="local-network-access; geolocation" 
+           title="Tutorial 3 · Green · Cecilia Chen" 
+           src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=a96836b2e79d49588f22cdc559ef9c19&theme=light&legend=true&scroll=false&center=11.223958045684473,43.76693260164954&scale=144447.638572" ></iframe>
+    
+       <figcaption>
+  Interactive NDVI map of Florence showing the spatial distribution of vegetation signals derived from Landsat 8 imagery acquired on September 8, 2026.
+       </figcaption>
+    </figure>
+
+       <figure>
+  <img
+    src="Florence-NDVI.png"
+    alt="NDVI map showing the spatial pattern of vegetation around the Florence study site, with higher vegetation signals in greener areas and lower values over built surfaces and water."
+    style="max-width: 100%; height: auto;"
+  >
+
+  <figcaption>
+    Figure 1.NDVI Colorized rendering around the Florence study site,
+    derived from Landsat 8 imagery acquired on September 8, 2026,
+    with 2% scene cloud cover.
+  </figcaption>
+</figure>
+
+    <h2>What I found</h2>
+    <p>
+      I expected the suburban agricultural and cultivated area near Fiesole to have the highest NDVI and estimated about 0.65; its actual value was 0.752. 
+      I originally ranked Piazzale Michelangelo second and the Garden of Pitti Palace third. In the actual data, the Pitti Palace garden was 0.569 and vegetation around Piazzale Michelangelo was 0.566. The paved plaza itself was only 0.122, showing how results change when looking more locally.
+      A high-index but low-habitat example was Stadio Artemio Franchi, with an NDVI of 0.627. Its highly managed sports turf produced a strong vegetation signal despite having much less structural ecological diversity than more complex habitat.
+    </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+        I am using NDVI to stand for the ecological value of green space, and it might fail because highly managed surfaces such as football turf can receive high NDVI values even though they do not provide the same habitat structure as more complex vegetation. 
+        The Arno River had an NDVI of -0.114, showing that ecologically meaningful environments can also appear “non-green.” Changing the threshold does not solve this problem because the limitation comes from what NDVI measures, not only where the cutoff is set.
+ 
+      </p>
+      <p>
+        <strong>AI use:</strong> I used ChatGPT to help me understand the Tutorial 3 instructions, navigate ArcGIS Map Viewer and Landsat Explorer, and refine the wording of my journal entry. I verified the final content using my own NDVI measurements, screenshots, and the tutorial document.
+    </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Cecilia Chen · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
