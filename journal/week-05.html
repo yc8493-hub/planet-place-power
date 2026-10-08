@@ -54,32 +54,30 @@ For water stress, I used WRI's Aqueduct 4.0 Water Risk dataset through ArcGIS On
 <h2>The method</h2>
 
 <p>
-  I used NDVI Raw to read index values and NDVI Colorized to visualize their spatial pattern. I compared three green places that I had ranked before checking the data, first at a broader Florence and peri-urban scale and then at more local urban sites. I also used the Index Mask tool with 0.5 as the threshold for “green,” then tested 0.4 and 0.6 to see whether changing the threshold could separate ecological habitat from managed green surfaces.
-</p>
+  I selected Palazzo Vecchio in Florence (43.769° N, 11.256° E) as my study site. Using Global Watersheds with MERIT-Hydro (2021) at lower precision, I delineated a catchment of approximately 4,500 km². The model snapped my requested point about 260 m to an outlet at 43.767° N, 11.255° E.
 
+I repeated the analysis using MERIT-Hydro at higher precision and HydroSHEDS (2013) at lower precision, obtaining catchment areas of 4,500 and 4,600 km², respectively.
+
+For water stress, I used WRI Aqueduct 4.0, which calculates baseline water stress at the sub-basin scale. Florence's water stress value was 0.862 (Extremely High), with a mapped polygon area of 6,071 km². Assuming a site area of 0.1 km², the polygon is approximately 60,710 times larger than my site.
+</p>
     
     <figure>
-      <iframe width="700" height="600" allow="local-network-access; geolocation" 
-           title="Tutorial 3 · Green · Cecilia Chen" 
-           src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=a96836b2e79d49588f22cdc559ef9c19&theme=light&legend=true&scroll=false&center=11.223958045684473,43.76693260164954&scale=144447.638572" ></iframe>
-    
+      <<iframe width="600" height="500" src="https://mghydro.com/app/shared/8948E7"></iframe>
+
        <figcaption>
-  Interactive NDVI map of Florence showing the spatial distribution of vegetation signals derived from Landsat 8 imagery acquired on September 8, 2026.
-       </figcaption>
+  Interactive watershed map of Florence showing the catchment boundary, river network, and outlet location derived from MERIT-Hydro (2021) at lower precision, with a catchment area of approximately 4,500 km².
+      </figcaption>
     </figure>
 
        <figure>
-  <img
-    src="Florence-NDVI.png"
-    alt="NDVI map showing the spatial pattern of vegetation around the Florence study site, with higher vegetation signals in greener areas and lower values over built surfaces and water."
-    style="max-width: 100%; height: auto;"
-  >
+  <iframe width="700" height="600" allow="local-network-access; geolocation" title="Tutorial 4 · Water · Cecilia Chen" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=e49fec57baad4803a56c56619186ffcc&theme=light&heading=true&legend=true&scroll=false&center=11.788049400292623,43.69419637088625&scale=2311162.2171545" ></iframe>
+
 
   <figcaption>
-    Figure 1.NDVI Colorized rendering around the Florence study site,
-    derived from Landsat 8 imagery acquired on September 8, 2026,
-    with 2% scene cloud cover.
+  Interactive water stress map of Florence showing the spatial distribution of baseline annual water stress from WRI Aqueduct 4.0 (1979–2019), with Florence classified as Extremely High (0.862).
   </figcaption>
+
+  
 </figure>
 
     <h2>What I found</h2>
