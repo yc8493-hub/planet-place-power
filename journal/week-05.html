@@ -65,7 +65,7 @@ For water stress, I used WRI Aqueduct 4.0, which calculates baseline water stres
       <<iframe width="600" height="500" src="https://mghydro.com/app/shared/8948E7"></iframe>
 
        <figcaption>
-  Interactive watershed map of Florence showing the catchment boundary, river network, and outlet location derived from MERIT-Hydro (2021) at lower precision, with a catchment area of approximately 4,500 km².
+  Figure 1: Interactive watershed map of Florence showing the catchment boundary, river network, and outlet location derived from MERIT-Hydro (2021) at lower precision, with a catchment area of approximately 4,500 km².
       </figcaption>
     </figure>
 
@@ -74,7 +74,7 @@ For water stress, I used WRI Aqueduct 4.0, which calculates baseline water stres
 
 
   <figcaption>
-  Interactive water stress map of Florence showing the spatial distribution of baseline annual water stress from WRI Aqueduct 4.0 (1979–2019), with Florence classified as Extremely High (0.862).
+  Figure 2: Interactive water stress map of Florence showing the spatial distribution of baseline annual water stress from WRI Aqueduct 4.0 (1979–2019), with Florence classified as Extremely High (0.862).
   </figcaption>
 
   
@@ -82,20 +82,20 @@ For water stress, I used WRI Aqueduct 4.0, which calculates baseline water stres
 
     <h2>What I found</h2>
     <p>
-      I expected the suburban agricultural and cultivated area near Fiesole to have the highest NDVI and estimated about 0.65; its actual value was 0.752. 
-      I originally ranked Piazzale Michelangelo second and the Garden of Pitti Palace third. In the actual data, the Pitti Palace garden was 0.569 and vegetation around Piazzale Michelangelo was 0.566. The paved plaza itself was only 0.122, showing how results change when looking more locally.
-      A high-index but low-habitat example was Stadio Artemio Franchi, with an NDVI of 0.627. Its highly managed sports turf produced a strong vegetation signal despite having much less structural ecological diversity than more complex habitat.
-    </p>
+     The three delineations produced similar catchment areas (4,500–4,600 km²), despite differences in outlet snapping.
 
+     I noticed that part of the watershed boundary crosses Florence's urban area, which made me wonder whether artificial infrastructure could transport water across it. Through further research, I identified the Santa Maria a Mantignano water treatment plant, which receives water from the Arno River near Santa Rosa through a pipeline. However, I could not confirm whether this pipeline crosses my watershed boundary. Although I found the approximate locations of the intake and treatment plant, Global Watersheds does not allow me to mark both locations while keeping the delineated boundary visible. Without overlaying these locations and verifying the pipeline's actual route, I cannot determine whether it crosses the boundary.
+    </p>
+    
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-        I am using NDVI to stand for the ecological value of green space, and it might fail because highly managed surfaces such as football turf can receive high NDVI values even though they do not provide the same habitat structure as more complex vegetation. 
-        The Arno River had an NDVI of -0.114, showing that ecologically meaningful environments can also appear “non-green.” Changing the threshold does not solve this problem because the limitation comes from what NDVI measures, not only where the cutoff is set.
- 
+      I am using the delineated watershed boundary to represent how water moves through Florence, but this proxy may fail because the model only represents surface drainage and excludes artificial water infrastructure, such as the pipeline connecting the Santa Rosa intake to the Mantignano treatment plant.
+
+      Although I identified this water supply system, I could not verify its exact relationship to the watershed boundary. Therefore, the map cannot establish whether water is transferred across the divide.
       </p>
       <p>
-        <strong>AI use:</strong> I used ChatGPT to help me understand the Tutorial 3 instructions, navigate ArcGIS Map Viewer and Landsat Explorer, and refine the wording of my journal entry. I verified the final content using my own NDVI measurements, screenshots, and the tutorial document.
+        <strong>AI use:</strong> I used ChatGPT to brainstorm and research possible water infrastructure that might cross watershed boundaries, and to help organize my findings and troubleshoot HTML code. I 
     </p>
     </div>
 
