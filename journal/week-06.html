@@ -62,41 +62,46 @@ I also used the Landsat 1980's Land Use/Land Cover dataset (1984–1992), which 
     View the 2017–2025 land cover comparison
   </a>.
 </p>
-    <figure>
-      <<iframe width="600" height="500" src="https://mghydro.com/app/shared/8948E7"></iframe>
-
-       <figcaption>
-  Figure 1: Interactive watershed map of Florence showing the catchment boundary, river network, and outlet location derived from MERIT-Hydro (2021) at lower precision, with a catchment area of approximately 4,500 km².
-      </figcaption>
-    </figure>
-
-       <figure>
-  <iframe width="700" height="600" allow="local-network-access; geolocation" title="Tutorial 4 · Water · Cecilia Chen" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=e49fec57baad4803a56c56619186ffcc&theme=light&heading=true&legend=true&scroll=false&center=11.788049400292623,43.69419637088625&scale=2311162.2171545" ></iframe>
-
+    
+<figure>
+  <img src="ChatGPT 图像 2026年10月15日 18_54_43.png"
+       alt="Florence land cover comparison between 2017 and 2025, showing a decrease in Crops and an increase in Built Area."
+       style="width:100%; height:auto;">
 
   <figcaption>
-  Figure 2: Interactive water stress map of Florence showing the spatial distribution of baseline annual water stress from WRI Aqueduct 4.0 (1979–2019), with Florence classified as Extremely High (0.862).
+    Figure 1: Sentinel-2 land cover comparison of Florence,
+    2017–2025. Source: Esri and Impact Observatory.
+    Resolution: 10 m. Scale: 1:37,918.
   </figcaption>
+</figure>
 
-  
+<figure>
+  <img src="截屏2026-10-15 18.19.47.png"
+       alt="Florence land cover comparison between 2023 and 2025, showing continued decreases in Crops."
+       style="width:100%; height:auto;">
+
+  <figcaption>
+    Figure 2: Sentinel-2 land cover comparison of Florence,
+    2023–2025. Source: Esri and Impact Observatory.
+    Resolution: 10 m. Scale: 1:37,918.
+  </figcaption>
 </figure>
 
     <h2>What I found</h2>
     <p>
-     The three delineations produced similar catchment areas (4,500–4,600 km²), despite differences in outlet snapping.
-
-     I noticed that part of the watershed boundary crosses Florence's urban area, which made me wonder whether artificial infrastructure could transport water across it. Through further research, I identified the Santa Maria a Mantignano water treatment plant, which receives water from the Arno River near Santa Rosa through a pipeline. However, I could not confirm whether this pipeline crosses my watershed boundary. Although I found the approximate locations of the intake and treatment plant, Global Watersheds does not allow me to mark both locations while keeping the delineated boundary visible. Without overlaying these locations and verifying the pipeline's actual route, I cannot determine whether it crosses the boundary.
+    Between 2017 and 2025, Crops decreased by 3.5%, while Trees and Built Area each increased by 2.%. The most noticeable changes appeared southwest of the historic center, where the distribution of agricultural land and built-up areas changed. The 2023–2025 map showed a similar pattern, with Crops decreasing by 2.0% and Built Area increasing by 0.5%.
+    However, some changes were not visible in the classification. The former FIAT factory site in Novoli was redeveloped into a mixed-use district with university buildings, housing, and public spaces, potentially benefiting students, residents, and users of public facilities. Yet both the historical and modern maps classified it as Built Area, without showing these changes in land use or who benefited from them.
     </p>
-    
+         
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-      I am using the delineated watershed boundary to represent how water moves through Florence, but this proxy may fail because the model only represents surface drainage and excludes artificial water infrastructure, such as the pipeline connecting the Santa Rosa intake to the Mantignano treatment plant.
+     I am using land cover classifications to represent changes in Florence's urban landscape, but this proxy may fail because the classifier assigns only one category to each pixel. Small gardens, street trees, and vegetation within residential areas may be classified as Built Area.
 
-      Although I identified this water supply system, I could not verify its exact relationship to the watershed boundary. Therefore, the map cannot establish whether water is transferred across the divide.
+     The Novoli example also shows that different land uses can share the same category. Therefore, an unchanged classification does not necessarily mean that the land itself has remained unchanged.
       </p>
       <p>
-        <strong>AI use:</strong> I used ChatGPT to brainstorm and research possible water infrastructure that might cross watershed boundaries, and to help organize my findings and troubleshoot HTML code. I 
+        <strong>AI use:</strong>  I used ChatGPT to help organize my observations, research the historical redevelopment of Novoli, and revise the journal writing. I checked the land cover values against my map screenshots and compared the historical site information with the mapped classifications.
     </p>
     </div>
 
