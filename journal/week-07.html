@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 06 · Cecilia</title>
+
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Cecilia</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 06 · Octorber 2026</p>
+
+    <!-- EDIT THIS: a title that says what you found, not what you did.
+         "The blocks that were built after the creek was filled" beats
+         "Week 1 journal entry". -->
+    <h1>Florence: Land cover</h1>
+
+    <!-- ============================================================
+         The six parts. Every entry in this course has all six.
+         Do not delete a heading — if a section is thin, that is
+         information too.
+         ============================================================ -->
+
+    <h2>The question</h2>
+    <p>
+How does Florence's physical geography relate to Italy's trade, and where does this connection break down across different scales?
+    </p>
+    <h2>The data</h2>
+<p>
+I used Italy's 2024 export data from the Harvard Atlas of Economic Complexity (HS92, current US dollars), based on UN Comtrade data and adjusted by the Harvard Growth Lab. The Atlas encourages reuse and adaptation with appropriate citations to the Atlas and its underlying sources.
+
+For country boundaries, I used Natural Earth's Admin 0 – Countries (1:110m, v5.1.1), which is in the public domain. No permission or attribution is required.
+</p>
+<h2>The method</h2>
+
+<p>
+I joined the export table to the country boundaries in ArcGIS Online, using Name from the Atlas and ADMIN from Natural Earth. I chose a one-to-one left join to keep unmatched countries visible.
+
+Out of 177 polygons, 15 had no matching export value. Comparing the original files also revealed 56 unmatched trade records. One important example was Turkey and Turkiye. The Atlas recorded about $19.3 billion in Italian exports to Turkiye, but the names did not match. This was a naming difference, not missing trade data.
+
+I then used Natural Breaks with six classes to visualize export values.
+</p>
+<figure>
+<iframe width="700" height="600" allow="local-network-access; geolocation" 
+title="Tutorial 6 · Industry" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=a48ec31b9cdb4a7eabede2ff404c582d&theme=light&heading=true&legend=true&scroll=false&center=-33.62112926561368,32.273451268328714&scale=147914381.897889" >
+</iframe>
+
+  <figcaption>
+    Figure 1. Italy's goods exports by destination in 2024.Export values are measured in current US dollars. Trade data are from the Harvard Atlas of Economic Complexity, and country boundaries are from Natural Earth (1:110m). 
+The datasets were connected using a left join on ADMIN (Natural Earth) and Name (Atlas). Three tourism-related locations are also marked: Uffizi Gallery in Florence, the Colosseum in Rome, and Rome Fiumicino Airport. 
+ 
+  </figcaption>
+</figure>
+
+    <h2>What I found</h2>
+    <p>
+ I found that Florence's physical geography is connected to its economic development. The Arno River historically supported transportation and trade, and it is also part of the city's landscape today. This connection holds when considering Florence's tourism industry, especially how its historical environment attracts visitors.
+
+However, the same connection does not fully explain tourism across Italy. Travel & Tourism was the largest export category shown in the Atlas, but the activities are distributed across different places. I chose the Uffizi Gallery in Florence, the Colosseum in Rome, and Fiumicino Airport as three representative points. Fiumicino is Italy's busiest airport, which also shows why I should not limit the study to Florence when analysing.
+    </p>
+         
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+I am using national export values to stand for the geographical distribution of Italy's trade, and it might fail because each value is assigned to an entire destination country, while economic activities take place in specific locations.
+
+Although I selected three representative tourism locations, they only show a small part of Italy's tourism industry. These points do not show how tourism revenue is distributed or how much each location contributes. The map also cannot tell us whether tourists arriving in Rome eventually travel to Florence.
+      </p>
+      <p>
+        <strong>AI use:</strong>  I used ChatGPT to help check the join fields and create the csv file containing the three locations and their coordinates. 
+    </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Cecilia Chen · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
