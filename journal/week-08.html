@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 06 · Cecilia</title>
+<title>Week 08 · Cecilia</title>
 
 <!-- Note the ../ — this page is inside the journal folder, so it has to
      look one level up to find the stylesheet. -->
@@ -42,33 +42,35 @@
 
     <h2>The question</h2>
     <p>
-How does Florence's physical geography relate to Italy's trade, and where does this connection break down across different scales?
+How visible is Florence's digital infrastructure, and how does its distribution reflect the city's character?
     </p>
     <h2>The data</h2>
 <p>
-I used Italy's 2024 export data from the Harvard Atlas of Economic Complexity (HS92, current US dollars), based on UN Comtrade data and adjusted by the Harvard Growth Lab. The Atlas encourages reuse and adaptation with appropriate citations to the Atlas and its underlying sources.
-
-For country boundaries, I used Natural Earth's Admin 0 – Countries (1:110m, v5.1.1), which is in the public domain. No permission or attribution is required.
+I used three sources for this week's research, all accessed on October 29, 2026. OpenStreetMap (OSM) is a community-created database available under the Open Database License (ODbL). Maps based on its data can be published with attribution and the required licence notice. TeleGeography's Submarine Cable Map allows screenshots to be republished under CC BY-SA 4.0 with credit, but its underlying data cannot be freely redistributed. Data Center Map, published by Data Center Map ApS, does not allow its content to be copied or republished without permission. Therefore, I only used it as a reference.
 </p>
 <h2>The method</h2>
 
 <p>
-I joined the export table to the country boundaries in ArcGIS Online, using Name from the Atlas and ADMIN from Natural Earth. I chose a one-to-one left join to keep unmatched countries visible.
+I used Overpass Turbo to search for telecom and power infrastructure within the same area around Florence. The telecom query searched for all objects tagged telecom, while the power query searched for power=substation and power=tower. In both queries, the predicate determined what infrastructure to search for, and {{bbox}} limited the search to the visible map extent. I ran both queries through the default Overpass API server (https://overpass-api.de/api/) on October 29, 2026, then exported the power data as GeoJSON and imported it into ArcGIS Online.
+</p>
 
-Out of 177 polygons, 15 had no matching export value. Comparing the original files also revealed 56 unmatched trade records. One important example was Turkey and Turkiye. The Atlas recorded about $19.3 billion in Italian exports to Turkiye, but the names did not match. This was a naming difference, not missing trade data.
-
-I then used Natural Breaks with six classes to visualize export values.
+<p>
+I did not add a second layer for this week's because the telecom query returned no results, while Data Center Map does not allow its data to be copied or republished without permission.
 </p>
 <figure>
 <iframe width="700" height="600" allow="local-network-access; geolocation" 
-title="Tutorial 6 · Industry" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=a48ec31b9cdb4a7eabede2ff404c582d&theme=light&heading=true&legend=true&scroll=false&center=-33.62112926561368,32.273451268328714&scale=147914381.897889" >
-</iframe>
+title="Tutorial 8 · Digital Infrasturcture · Cecilia Chen" 
+src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=e1a0af47a19644008476293223a36a86&theme=light&heading=true&legend=true&scroll=false&center=11.25990295,43.76942335477116&scale=144447.638572" >
+     
+ </iframe>
 
   <figcaption>
-    Figure 1. Italy's goods exports by destination in 2024.Export values are measured in current US dollars. Trade data are from the Harvard Atlas of Economic Complexity, and country boundaries are from Natural Earth (1:110m). 
-The datasets were connected using a left join on ADMIN (Natural Earth) and Name (Atlas). Three tourism-related locations are also marked: Uffizi Gallery in Florence, the Colosseum in Rome, and Rome Fiumicino Airport. 
- 
+    Figure 1. 
+Electricity infrastructure (power=substation, power=tower) around Florence, retrieved from OpenStreetMap via Overpass Turbo on October 29, 2026. Contains information from OpenStreetMap, which is made available here under the Open Database License (ODbL).
+
+The same area returned zero features tagged telecom in OpenStreetMap.
   </figcaption>
+     
 </figure>
 
     <h2>What I found</h2>
@@ -81,12 +83,10 @@ However, the same connection does not fully explain tourism across Italy. Travel
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-I am using national export values to stand for the geographical distribution of Italy's trade, and it might fail because each value is assigned to an entire destination country, while economic activities take place in specific locations.
-
-Although I selected three representative tourism locations, they only show a small part of Italy's tourism industry. These points do not show how tourism revenue is distributed or how much each location contributes. The map also cannot tell us whether tourists arriving in Rome eventually travel to Florence.
+I am using mapped power infrastructure to stand for the electricity network around Florence, and it might fail because OpenStreetMap relies on what contributors can identify and record. Electricity towers are relatively easy to recognize, while underground cables and facilities inside buildings may not be recorded. Therefore, zero telecom results in Overpass map do not mean that Florence has no telecommunications infrastructure. They only show what is missing from this particular dataset.
       </p>
       <p>
-        <strong>AI use:</strong>  I used ChatGPT to help check the join fields and create the csv file containing the three locations and their coordinates. 
+        <strong>AI use:</strong>  I consulted ChatGPT when I was unsure how to deal with the absence of submarine cable landing points and telecom data in Florence and decided not to add a second layer and kept my original map.
     </p>
     </div>
 
