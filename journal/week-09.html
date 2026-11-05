@@ -42,147 +42,97 @@
 
     <h2>The question</h2>
     <p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 09 · Cecilia</title>
-
-<!-- Note the ../ — this page is inside the journal folder, so it has to
-     look one level up to find the stylesheet. -->
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="../index.html">Cecilia</a>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../index.html#journal">Journal</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-<article class="entry">
-  <div class="wrap wrap-narrow">
-
-    <p class="kicker">Week 09 · Octorber 2026</p>
-
-    <!-- EDIT THIS: a title that says what you found, not what you did.
-         "The blocks that were built after the creek was filled" beats
-         "Week 1 journal entry". -->
-    <h1>Florence: Digital Infrastructure</h1>
-
-    <!-- ============================================================
-         The six parts. Every entry in this course has all six.
-         Do not delete a heading — if a section is thin, that is
-         information too.
-         ============================================================ -->
-
-    <h2>The question</h2>
-    <p>
-
+Although the Arno River was essential to Florence's early economic development, the city's modern economy is less dependent on the river's physical resources.
     </p>
+       <p>
+My StoryMap examines this change through the relationship between Florence's physical landscape, water system, land cover, and economic activities.
+       </p>
     <h2>The data</h2>
+
 <p>
-I used three sources for this week's research, all accessed on October 29, 2026. OpenStreetMap (OSM) is a community-created database available under the Open Database License (ODbL). Maps based on its data can be published with attribution and the required licence notice. TeleGeography's Submarine Cable Map allows screenshots to be republished under CC BY-SA 4.0 with credit, but its underlying data cannot be freely redistributed. Data Center Map, published by Data Center Map ApS, does not allow its content to be copied or republished without permission. Therefore, I only used it as a reference.
+  I reviewed all seven maps from Week 02 to Week 08,
+  checking their spatial units, data origins, and
+  republication conditions.
 </p>
+
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5;">
+    <thead>
+      <tr style="background-color: #f5f5f5;">
+        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Week</th>
+        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Mapping Unit</th>
+        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Republish</th>
+        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Origin Check</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>02 Climate</td>
+        <td>Italy-wide station network; Pisa station represents Florence</td>
+        <td>Unclear</td>
+        <td>Traced: NOAA NCEI GHCN-Daily via Esri</td>
+      </tr>
+      <tr>
+        <td>03 Terrain</td>
+        <td>10 m terrain cells; 250 m soil cells</td>
+        <td>Conditional: SoilGrids CC BY 4.0; Esri terms apply</td>
+        <td>Traced: INGV TINITALY and ISRIC SoilGrids</td>
+      </tr>
+      <tr>
+        <td>04 Vegetation</td>
+        <td>30 m Landsat 8 pixels</td>
+        <td>Not documented</td>
+        <td>Partially traced: Landsat 8 imagery via Esri</td>
+      </tr>
+      <tr>
+        <td>05 Water</td>
+        <td>Watershed boundary (~4,500 km²); water-stress sub-basin</td>
+        <td>Partial: Aqueduct CC BY 4.0; watershed terms not documented</td>
+        <td>Traced: MERIT-Hydro, HydroSHEDS and WRI Aqueduct</td>
+      </tr>
+      <tr>
+        <td>06 Land Cover</td>
+        <td>10 m Sentinel-2 cells; 30 m historical Landsat cells</td>
+        <td>Conditional: CC BY 4.0 source data; Esri terms apply</td>
+        <td>Traced: Esri / Impact Observatory; historical Landsat</td>
+      </tr>
+      <tr>
+        <td>07 Industry</td>
+        <td>Country polygons (Admin 0); joined using Name and ADMIN</td>
+        <td>Atlas reuse with attribution; Natural Earth public domain</td>
+        <td>Traced: Harvard Atlas, UN Comtrade and Natural Earth</td>
+      </tr>
+      <tr>
+        <td>08 Digital</td>
+        <td>User-defined Overpass bounding box</td>
+        <td>Yes, subject to ODbL requirements</td>
+        <td>Traced: OpenStreetMap via Overpass Turbo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 <h2>The method</h2>
 
 <p>
-I used Overpass Turbo to search for telecom and power infrastructure within the same area around Florence. The telecom query searched for all objects tagged telecom, while the power query searched for power=substation and power=tower. In both queries, the predicate determined what infrastructure to search for, and {{bbox}} limited the search to the visible map extent. I ran both queries through the default Overpass API server (https://overpass-api.de/api/) on October 29, 2026, then exported the power data as GeoJSON and imported it into ArcGIS Online.
+I selected four maps: Terrain (Week 03), Water (Week 05), Land Cover (Week 06), and Industry (Week 07).
+
+I arranged them to move from the Arno's physical environment to Florence's modern economy. Terrain introduces the valley where Florence developed, and Water shows the larger river system. Land Cover then moves to the modern urban landscape, while Industry provides a broader view of trade and tourism-related locations.
+
+The spatial units also change across the sequence: from 10 m terrain cells to a watershed boundary, then 10 m land cover cells and national country polygons. These maps describe different geographical scales, so their results cannot be directly compared as measurements of the same area.
 </p>
-
-<figure>
-<iframe width="700" height="600" allow="local-network-access; geolocation" 
-title="Tutorial 8 · Digital Infrasturcture · Cecilia Chen" 
-src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=e1a0af47a19644008476293223a36a86&theme=light&heading=true&legend=true&scroll=false&center=11.25990295,43.76942335477116&scale=144447.638572" >
-     
- </iframe>
-
-  <figcaption>
-    Figure 1. 
-Electricity infrastructure (power=substation, power=tower) around Florence, retrieved from OpenStreetMap via Overpass Turbo on October 29, 2026. Contains information from OpenStreetMap, which is made available here under the Open Database License (ODbL).
-
-The same area returned zero features tagged telecom in OpenStreetMap.
-  </figcaption>
-     
-</figure>
 
 <p>
-I did not add a second layer for this week's map because the telecom query returned no results, while Data Center Map does not allow its data to be copied or republished without permission.
+     My published StoryMap brings together these four maps to explore the changing role of the Arno River in Florence's economic development. URL: https://arcg.is/1iuTfS8
 </p>
+
     <h2>What I found</h2>
     <p>
- I found that Florence's physical geography is connected to its economic development. The Arno River historically supported transportation and trade, and it is also part of the city's landscape today. This connection holds when considering Florence's tourism industry, especially how its historical environment attracts visitors.
+Putting these maps together helped me see the difference between the Arno River's physical importance and its economic role. The terrain and watershed maps show how the river and its valley provided the natural setting for Florence's early development. The land cover and industry maps shift the focus toward the modern urban landscape and wider economic connections.
 
-However, the same connection does not fully explain tourism across Italy. Travel & Tourism was the largest export category shown in the Atlas, but the activities are distributed across different places. I chose the Uffizi Gallery in Florence, the Colosseum in Rome, and Fiumicino Airport as three representative points. Fiumicino is Italy's busiest airport, which also shows why I should not limit the study to Florence when analysing.
-    </p>
-         
-    <h2>What this does not show</h2>
-    <div class="limits">
-      <p>
-I am using mapped power infrastructure to stand for the electricity network around Florence, and it might fail because OpenStreetMap relies on what contributors can identify and record. Electricity towers are relatively easy to recognize, while underground cables and facilities inside buildings may not be recorded. Therefore, zero telecom results in Overpass map do not mean that Florence has no telecommunications infrastructure. They only show what is missing from this particular dataset.
-      </p>
-      <p>
-        <strong>AI use:</strong>  I consulted ChatGPT when I was unsure how to deal with the absence of submarine cable landing points and telecom data in Florence and decided not to add a second layer and kept my original map.
-    </p>
-    </div>
-
-    <a class="back" href="../index.html#journal">← Back to all entries</a>
-
-  </div>
-</article>
-</main>
-
-<footer class="site-foot">
-  <div class="wrap wrap-narrow">
-    <p>Cecilia Chen · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
-  </div>
-</footer>
-
-</body>
-</html>
-    </p>
-    <h2>The data</h2>
-<p>
-I used three sources for this week's research, all accessed on October 29, 2026. OpenStreetMap (OSM) is a community-created database available under the Open Database License (ODbL). Maps based on its data can be published with attribution and the required licence notice. TeleGeography's Submarine Cable Map allows screenshots to be republished under CC BY-SA 4.0 with credit, but its underlying data cannot be freely redistributed. Data Center Map, published by Data Center Map ApS, does not allow its content to be copied or republished without permission. Therefore, I only used it as a reference.
-</p>
-<h2>The method</h2>
-
-<p>
-I used Overpass Turbo to search for telecom and power infrastructure within the same area around Florence. The telecom query searched for all objects tagged telecom, while the power query searched for power=substation and power=tower. In both queries, the predicate determined what infrastructure to search for, and {{bbox}} limited the search to the visible map extent. I ran both queries through the default Overpass API server (https://overpass-api.de/api/) on October 29, 2026, then exported the power data as GeoJSON and imported it into ArcGIS Online.
-</p>
-
-<figure>
-<iframe width="700" height="600" allow="local-network-access; geolocation" 
-title="Tutorial 8 · Digital Infrasturcture · Cecilia Chen" 
-src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=e1a0af47a19644008476293223a36a86&theme=light&heading=true&legend=true&scroll=false&center=11.25990295,43.76942335477116&scale=144447.638572" >
-     
- </iframe>
-
-  <figcaption>
-    Figure 1. 
-Electricity infrastructure (power=substation, power=tower) around Florence, retrieved from OpenStreetMap via Overpass Turbo on October 29, 2026. Contains information from OpenStreetMap, which is made available here under the Open Database License (ODbL).
-
-The same area returned zero features tagged telecom in OpenStreetMap.
-  </figcaption>
-     
-</figure>
-
-<p>
-I did not add a second layer for this week's map because the telecom query returned no results, while Data Center Map does not allow its data to be copied or republished without permission.
-</p>
-    <h2>What I found</h2>
-    <p>
- I found that Florence's physical geography is connected to its economic development. The Arno River historically supported transportation and trade, and it is also part of the city's landscape today. This connection holds when considering Florence's tourism industry, especially how its historical environment attracts visitors.
-
-However, the same connection does not fully explain tourism across Italy. Travel & Tourism was the largest export category shown in the Atlas, but the activities are distributed across different places. I chose the Uffizi Gallery in Florence, the Colosseum in Rome, and Fiumicino Airport as three representative points. Fiumicino is Italy's busiest airport, which also shows why I should not limit the study to Florence when analysing.
+This comparison suggests that Florence's economy is no longer tied to the river's physical resources in the same way as in the past. However, I also realized that the modern maps do not directly measure this change in dependence.
     </p>
          
     <h2>What this does not show</h2>
